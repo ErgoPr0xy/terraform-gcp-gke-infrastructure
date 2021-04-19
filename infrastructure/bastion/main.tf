@@ -80,7 +80,7 @@ resource "google_compute_instance" "bastion" {
     command = <<EOF
         READY=""
         for i in $(seq 1 20); do
-          if gcloud compute ssh ${local.hostname} --project ${var.project_id} --zone ${var.region}-a --command uptime; then
+          if gcloud compute ssh ${local.hostname} --project ${var.project_id} --zone ${var.region}-b --command uptime; then
             READY="yes"
             break;
           fi
